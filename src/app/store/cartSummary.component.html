@@ -1,0 +1,22 @@
+<!-- <div>{{ cart.itemCount }}</div>
+<div>{{ cart.cartPrice }}</div> -->
+
+<div class="float-end">
+  <small class="fs-6">
+    Your Cart:
+    <span *ngIf="cart.itemCount > 0">
+      {{ cart.itemCount }} items(s)
+      {{ cart.cartPrice }}
+    </span>
+
+    <span *ngIf="cart.itemCount == 0"> cart is empty </span>
+  </small>
+
+  <button
+    routerLink="/cart"
+    class="btn btn-sm bg-dark text-white"
+    [disabled]="cart.itemCount == 0"
+  >
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>

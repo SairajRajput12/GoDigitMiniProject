@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'app',
+  template: '<router-outlet></router-outlet>', // <store/>  or <cart-detail/>  or <checkout/>
 })
-export class AppComponent {
-  title = 'myEcom1';
-}
+export class AppComponent {} // SRP - launch feature component
