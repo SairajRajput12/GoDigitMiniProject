@@ -6,9 +6,10 @@ import { ModelModule } from './../model/model.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreComponent } from './store.component';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [BrowserModule, ModelModule, RouterModule],
+  imports: [BrowserModule, ModelModule, RouterModule, FormsModule],
   declarations: [
     StoreComponent,
     CartSummaryComponent,

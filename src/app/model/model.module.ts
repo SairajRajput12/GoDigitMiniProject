@@ -1,3 +1,5 @@
+import { OrderRepository } from './order.repository';
+import { Order } from './order.model';
 import { Cart } from './cart.model';
 import { RestDataSource } from './rest.datasource';
 import { ProductRepository } from './product.repository';
@@ -11,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
     StaticDataSource,
     ProductRepository,
     Cart,
+    Order,
+    OrderRepository,
+    RestDataSource,
     { provide: StaticDataSource, useClass: RestDataSource },
   ], // register & launch services/injectables
 })
