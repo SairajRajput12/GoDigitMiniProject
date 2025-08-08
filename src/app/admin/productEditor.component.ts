@@ -10,7 +10,7 @@ import { ProductRepository } from '../model/product.repository';
 })
 export class ProductEditorComponent {
   editing: boolean = false;
-  product: Product = new Product(); // second record.
+  product: Product = new Product(); // stores info for 1st record
 
   constructor(
     private repository: ProductRepository,
