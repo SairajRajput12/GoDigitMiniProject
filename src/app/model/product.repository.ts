@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Product } from './product.model';
+import { Injectable } from "@angular/core";
+import { Product } from "./product.model";
 //import { StaticDataSource } from "./static.datasource";
-import { RestDataSource } from './rest.datasource';
+import { RestDataSource } from "./rest.datasource";
 
 @Injectable()
 export class ProductRepository {
@@ -12,7 +12,7 @@ export class ProductRepository {
     dataSource.getProducts().subscribe((data) => {
       this.products = data;
       this.categories = data
-        .map((p) => p.category ?? '(None)')
+        .map((p) => p.category ?? "(None)")
         .filter((c, index, array) => array.indexOf(c) == index)
         .sort();
     });
@@ -20,7 +20,7 @@ export class ProductRepository {
 
   getProducts(category?: string): Product[] {
     return this.products.filter(
-      (p) => category == undefined || category == p.category,
+      (p) => category == undefined || category == p.category
     );
   }
 
@@ -42,7 +42,7 @@ export class ProductRepository {
         this.products.splice(
           this.products.findIndex((p) => p.id == product.id),
           1,
-          product,
+          product
         );
       });
     }
@@ -52,7 +52,7 @@ export class ProductRepository {
     this.dataSource.deleteProduct(id).subscribe((p) => {
       this.products.splice(
         this.products.findIndex((p) => p.id == id),
-        1,
+        1
       );
     });
   }

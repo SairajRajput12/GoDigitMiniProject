@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
-import { Product } from './product.model';
-import { Order } from './order.model';
-import { HttpHeaders } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { map, Observable } from "rxjs";
+import { Product } from "./product.model";
+import { Order } from "./order.model";
+import { HttpHeaders } from "@angular/common/http";
 
-const PROTOCOL = 'http';
+const PROTOCOL = "http";
 const PORT = 3500;
 
 @Injectable()
@@ -18,21 +18,21 @@ export class RestDataSource {
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.baseUrl + 'products');
+    return this.http.get<Product[]>(this.baseUrl + "products");
   }
 
   saveOrder(order: Order): Observable<Order> {
-    return this.http.post<Order>(this.baseUrl + 'orders', order);
+    return this.http.post<Order>(this.baseUrl + "orders", order);
   }
 
   saveProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseUrl + 'products', product);
+    return this.http.post<Product>(this.baseUrl + "products", product);
   }
 
   updateProduct(product: Product): Observable<Product> {
     return this.http.put<Product>(
       `${this.baseUrl}products/${product.id}`,
-      product,
+      product
     );
   }
 
@@ -41,7 +41,7 @@ export class RestDataSource {
   }
 
   getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.baseUrl + 'orders');
+    return this.http.get<Order[]>(this.baseUrl + "orders");
   }
 
   deleteOrder(id?: number): Observable<Order> {

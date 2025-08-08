@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app',
-  template: '<router-outlet></router-outlet>', // <store/>  or <cart-detail/>  or <checkout/>
+  selector: "app",
+  template: "<router-outlet></router-outlet>",
 })
-export class AppComponent {} // SRP - launch feature component
+export class AppComponent {}

@@ -1,9 +1,28 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { Order } from "../model/order.model";
+import { OrderRepository } from "../model/order.repository";
 
 @Component({
-  selector: 'order-table',
-  templateUrl: 'orderTable.component.html',
+  selector: "orderTableComponent",
+  templateUrl: "orderTable.component.html",
 })
 export class OrderTableComponent {
-  constructor() {}
+  includeShipped = false;
+
+  constructor(private repository: OrderRepository) {}
+
+  getOrders(): Order[] {
+    return this.repository
+      .getOrders()
+      .filter((o) => this.includeShipped || !o.shipped);
+  }
+
+  markShipped(order: Order) {
+    order.shipped = true;
+    this.repository.updateOrder(order);
+  }
+
+  delete(id?: number) {
+    this.repository.deleteOrder(id);
+  }
 }

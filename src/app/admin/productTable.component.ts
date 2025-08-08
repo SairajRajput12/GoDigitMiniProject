@@ -10,7 +10,7 @@ export class ProductTableComponent {
   constructor(private repository: ProductRepository) {}
 
   getProducts(): Product[] {
-    return this.repository.getProducts(undefined);
+    return this.repository.getProducts();
   }
 
   deleteProduct(id?: number) {

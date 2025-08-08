@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="bg-dark text-white p-2">
-      <span class="navbar-brand ml-2">Cart Detail</span>
+    <div class="col bg-dark text-white">
+      <a class="navbar-brand">SPORTS STORE</a>
     </div>
   </div>
   <div class="row">
@@ -12,8 +12,8 @@
           <tr>
             <th>Quantity</th>
             <th>Product</th>
-            <th class="text-end">Price</th>
-            <th class="text-end">Subtotal</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Subtotal</th>
           </tr>
         </thead>
         <tbody>
@@ -27,25 +27,30 @@
                 class="form-control-sm"
                 style="width: 5em"
                 [value]="line.quantity"
-                (change)="cart.updateQuantity(line.product, $any($event).target.value)"
+                (change)="cart.updateQuantity(line.product, $event)"
               />
             </td>
             <td>{{ line.product.name }}</td>
-            <td class="text-end">
+            <td class="text-right">
               {{ line.product.price | currency : "USD" : "symbol" : "2.2-2" }}
             </td>
-            <td class="text-end">
-              {{ line.LineTotal | currency : "USD" : "symbol" : "2.2-2" }}
+            <td class="text-right">
+              {{ line.lineTotal | currency : "USD" : "symbol" : "2.2-2" }}
             </td>
             <td class="text-center">
-              <button class="btn btn-sm btn-danger" (click)="cart.removeLine(line.product.id ?? 0)">Remove</button>
+              <button
+                class="btn btn-sm btn-danger"
+                (click)="cart.removeLine(line.product.id)"
+              >
+                Remove
+              </button>
             </td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="3" class="text-end">Total:</td>
-            <td class="text-end">
+            <td colspan="3" class="text-right">Total:</td>
+            <td class="text-right">
               {{ cart.cartPrice | currency : "USD" : "symbol" : "2.2-2" }}
             </td>
           </tr>
@@ -53,12 +58,17 @@
       </table>
     </div>
   </div>
-
   <div class="row">
     <div class="col">
       <div class="text-center">
-        <button class="btn btn-primary m-1" routerLink="/store">Continue Shopping</button>
-        <button class="btn btn-secondary m-1" routerLink="/checkout" [disabled]="cart.lines.length == 0">
+        <button class="btn btn-primary m-1" routerLink="/store">
+          Continue Shopping
+        </button>
+        <button
+          class="btn btn-secondary m-1"
+          routerLink="/checkout"
+          [disabled]="cart.lines.length == 0"
+        >
           Checkout
         </button>
       </div>

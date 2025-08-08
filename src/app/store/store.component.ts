@@ -1,42 +1,38 @@
-import { Router } from '@angular/router';
-import { Cart } from '../model/cart.model';
-import { Product } from './../model/product.model';
-import { ProductRepository } from './../model/product.repository';
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { Product } from "../model/product.model";
+import { ProductRepository } from "../model/product.repository";
+import { Cart } from "../model/cart.model";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'store',
-  templateUrl: 'store.component.html',
+  selector: "store",
+  templateUrl: "store.component.html",
 })
 export class StoreComponent {
-  // SRP - to support a store template
+  selectedCategory: string | undefined;
 
-  public selectedCategory: string | undefined = undefined; // 'Category 3'
-  public productsPerPage: number = 4; // 6
-  public selectedPage: number = 1; // 1
+  public productsPerPage = 4;
+  public selectedPage = 1;
 
   constructor(
     private repository: ProductRepository,
     private cart: Cart,
-    private router: Router,
+    private router: Router
   ) {}
 
-  get products() {
-    // return computed property - not functions
-    let pageIndex = (this.selectedPage - 1) * this.productsPerPage; // 0
+  get products(): Product[] {
+    let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
     return this.repository
       .getProducts(this.selectedCategory)
       .slice(pageIndex, pageIndex + this.productsPerPage);
   }
 
-  get categories() {
-    // // return computed property - not functions
+  get categories(): string[] {
     return this.repository.getCategories();
   }
 
   changeCategory(newCategory?: string) {
     this.selectedCategory = newCategory;
-    this.changePage(1);
   }
 
   changePage(newPage: number) {
@@ -44,7 +40,7 @@ export class StoreComponent {
   }
 
   changePageSize(newSize: any) {
-    this.productsPerPage = Number(newSize.value);
+    this.productsPerPage = Number(newSize.target.value);
     this.changePage(1);
   }
 
@@ -52,19 +48,15 @@ export class StoreComponent {
     return Array(
       Math.ceil(
         this.repository.getProducts(this.selectedCategory).length /
-          this.productsPerPage,
-      ),
+          this.productsPerPage
+      )
     )
       .fill(0)
       .map((x, i) => i + 1);
   }
 
   addProductToCart(product: Product) {
-    //product
-    // console.log(product);
-
-    // send details to the cart service
     this.cart.addLine(product);
-    this.router.navigateByUrl('/cart'); // Hashbang
+    this.router.navigateByUrl("/cart");
   }
 }
