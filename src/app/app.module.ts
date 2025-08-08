@@ -34,6 +34,14 @@ import { RouterModule } from '@angular/router';
         canActivate: [StoreFirstGuard], //routeGuard
       },
       {
+        path: 'admin',
+        loadChildren: () =>
+          import('./admin/admin.module').then((m) => m.AdminModule),
+        // component: AdminComponent,
+
+        // canActivate: [StoreFirstGuard], //routeGuard
+      },
+      {
         path: '**',
         redirectTo: '/store', // makes a state change in the BrowserURl state - #HashBang
       },

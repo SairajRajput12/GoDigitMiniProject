@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     Order,
     OrderRepository,
     RestDataSource,
-    { provide: StaticDataSource, useClass: RestDataSource },
+    // { provide: StaticDataSource, useClass: RestDataSource },
   ], // register & launch services/injectables
 })
 export class ModelModule {} // SRP - register & launch services/injectibles

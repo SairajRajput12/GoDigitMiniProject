@@ -4,19 +4,14 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col bg-dark text-white p-2">
-      <span class="navbar-brand ml-2"> Ecom App </span>
+      <span class="navbar-brand ml-2">Ecom App</span>
       <cart-summary />
     </div>
   </div>
 
   <div class="row">
     <div class="col-3 p-2">
-      <button
-        (click)="changeCategory()"
-        class="btn btn-block btn-outline-primary"
-      >
-        Home
-      </button>
+      <button (click)="changeCategory()" class="btn btn-block btn-outline-primary">Home</button>
 
       <button
         *ngFor="let cat of categories"
@@ -26,6 +21,8 @@
       >
         {{ cat }}
       </button>
+
+      <button routerLink="/admin" class="btn btn-block btn-danger m-t-3">Admin</button>
     </div>
 
     <div class="col-9 p-2">
@@ -39,20 +36,11 @@
         <div class="card-text bg-white p-1">
           {{ product.description }}
         </div>
-        <button
-          (click)="addProductToCart(product)"
-          class="btn btn-success btn-sm float-end"
-        >
-          Add to Cart
-        </button>
+        <button (click)="addProductToCart(product)" class="btn btn-success btn-sm float-end">Add to Cart</button>
       </div>
 
       <div class="form-inline float-left mr-1">
-        <select
-          class="form-control"
-          [value]="productsPerPage"
-          (change)="changePageSize($event.target)"
-        >
+        <select class="form-control" [value]="productsPerPage" (change)="changePageSize($event.target)">
           <option value="3">3 per Page</option>
           <option value="4">4 per Page</option>
           <option value="6">6 per Page</option>

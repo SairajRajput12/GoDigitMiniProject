@@ -18,7 +18,7 @@ export class StoreComponent {
   constructor(
     private repository: ProductRepository,
     private cart: Cart,
-    private router: Router
+    private router: Router,
   ) {}
 
   get products() {
@@ -52,8 +52,8 @@ export class StoreComponent {
     return Array(
       Math.ceil(
         this.repository.getProducts(this.selectedCategory).length /
-          this.productsPerPage
-      )
+          this.productsPerPage,
+      ),
     )
       .fill(0)
       .map((x, i) => i + 1);
