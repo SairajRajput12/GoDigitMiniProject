@@ -6,6 +6,8 @@ import { StoreModule } from './store/store.module';
 import { StoreComponent } from './store/store.component';
 import { CartDetailComponent } from './store/cartDetail.component';
 import { RouterModule } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpInterceptorService } from './interceptor/httpinterceptor-service';
 
 @NgModule({
   imports: [
@@ -27,14 +29,19 @@ import { RouterModule } from '@angular/router';
 
       {
         path: 'admin',
-        loadChildren: () =>
-          import('./admin/admin.module').then((m) => m.AdminModule),
+        loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule),
       },
 
       { path: '**', redirectTo: '/store' },
     ]),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true,
+    },
+  ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
