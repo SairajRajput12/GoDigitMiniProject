@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
+  selector: 'auth-comp',
   templateUrl: 'auth.component.html',
 })
 export class AuthComponent {

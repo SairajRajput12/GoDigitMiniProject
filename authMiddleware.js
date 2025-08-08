@@ -23,7 +23,7 @@ module.exports = function (req, res, next) {
       req.body.name == USERNAME &&
       req.body.password == PASSWORD
     ) {
-      let token = jwt.sign({ data: USERNAME, expiresIn: '1h' }, APP_SECRET);
+      let token = jwt.sign({ data: USERNAME, expiresIn: '1h' }, APP_SECRET); // web token
       res.json({ success: true, token: token });
     } else {
       res.json({ success: false });
