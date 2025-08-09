@@ -1,3 +1,4 @@
+import { ConnectionService } from './connection.service';
 import { AuthService } from './auth.service';
 import { NgModule } from '@angular/core';
 import { ProductRepository } from './product.repository';
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     Order,
     OrderRepository,
     AuthService,
+    ConnectionService,
     { provide: StaticDataSource, useClass: RestDataSource },
     RestDataSource,
   ],

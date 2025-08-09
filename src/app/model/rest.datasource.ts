@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, map, Observable, throwError } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Product } from './product.model';
 import { Order } from './order.model';
 import { HttpHeaders } from '@angular/common/http';
@@ -14,22 +14,13 @@ export class RestDataSource {
   auth_token?: string;
 
   constructor(private http: HttpClient) {
-    this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
+    //this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
+    this.baseUrl = '/api/';
   }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl + 'products');
   }
-
-  /* getProducts(): Observable<Product[]> {
-    // pub...
-    return this.http.get<Product[]>(this.baseUrl + "productss").pipe(
-      catchError((err) => {
-        console.error("error caught in service", err);
-        return throwError(err);
-      })
-    );
-  } */
 
   saveOrder(order: Order): Observable<Order> {
     return this.http.post<Order>(this.baseUrl + 'orders', order);
@@ -41,7 +32,6 @@ export class RestDataSource {
         name: user,
         password: pass,
       })
-
       .pipe(
         map((response) => {
           this.auth_token = response.success ? response.token : null;

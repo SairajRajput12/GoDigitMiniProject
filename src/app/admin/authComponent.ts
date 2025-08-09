@@ -8,20 +8,29 @@ import { Router } from '@angular/router';
   templateUrl: 'auth.component.html',
 })
 export class AuthComponent {
-  username?: string;
-  password?: string;
+  username?: string; // 'admin'
+  password?: string; // 'secret'
   errorMessage?: string;
 
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(
+    private router: Router,
+    private auth: AuthService,
+  ) {}
 
   authenticate(form: NgForm) {
     if (form.valid) {
-      this.auth.authenticate(this.username ?? '', this.password ?? '').subscribe((response) => {
-        if (response) {
-          this.router.navigateByUrl('/admin/main');
-        }
-        this.errorMessage = 'Authentication Failed';
-      });
+      this.auth
+        .authenticate(
+          this.username ?? '',
+          this.password ?? '',
+        )
+
+        .subscribe((response) => {
+          if (response) {
+            this.router.navigateByUrl('/admin/main');
+          }
+          this.errorMessage = 'Authentication Failed';
+        });
     } else {
       this.errorMessage = 'Form Data Invalid';
     }

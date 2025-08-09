@@ -38,12 +38,7 @@
               {{ line.lineTotal | currency : "USD" : "symbol" : "2.2-2" }}
             </td>
             <td class="text-center">
-              <button
-                class="btn btn-sm btn-danger"
-                (click)="cart.removeLine(line.product.id)"
-              >
-                Remove
-              </button>
+              <button class="btn btn-sm btn-danger" (click)="cart.removeLine(line.product.id)">Remove</button>
             </td>
           </tr>
         </tbody>
@@ -61,15 +56,10 @@
   <div class="row">
     <div class="col">
       <div class="text-center">
-        <button class="btn btn-primary m-1" routerLink="/store">
-          Continue Shopping
-        </button>
-        <button
-          class="btn btn-secondary m-1"
-          routerLink="/checkout"
-          [disabled]="cart.lines.length == 0"
-        >
-          Checkout
+        <button class="btn btn-primary m-1" routerLink="/store">Continue Shopping</button>
+
+        <button class="btn btn-secondary m-1" routerLink="/checkout" [disabled]="cart.lines.length == 0 || !connected">
+          {{ connected ? "Checkout" : "Offline" }}
         </button>
       </div>
     </div>

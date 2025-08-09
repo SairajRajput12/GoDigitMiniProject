@@ -29,7 +29,9 @@ import { HttpInterceptorService } from './interceptor/httpinterceptor-service';
 
       {
         path: 'admin',
-        loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule),
+        loadChildren: () =>
+          import('./admin/admin.module').then((m) => m.AdminModule),
+        //    component: AuthComponent,
       },
 
       { path: '**', redirectTo: '/store' },
