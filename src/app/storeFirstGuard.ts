@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { StoreComponent } from './store/store.component';
+import { EventComponent } from './store/events.component';
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Injectable()
@@ -12,7 +12,7 @@ export class StoreFirstGuard {
     if (this.firstNavigation) {
       this.firstNavigation = false;
 
-      if (route.component != StoreComponent) {
+      if (route.component != EventComponent) {
         this.router.navigateByUrl('/'); // Hashbang
         return false;
       }

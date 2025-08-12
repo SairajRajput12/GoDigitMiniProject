@@ -1,22 +1,21 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col bg-dark text-white">
-      <a class="navbar-brand">Ecom3 Admin</a>
+  <div class="row bg-black">
+    <div class="col text-center p-3">
+      <a class="navbar-brand fw-bold" style="color: #e7165a; font-size: 2rem">Eventra</a>
     </div>
   </div>
+
   <div class="row mt-2">
+    <!-- Shell area - remains consistent for a while in all the cases with the 3 columns. -->
     <div class="col-3">
-      <button class="btn btn-outline-info btn-block" routerLink="/admin/main/products" routerLinkActive="active">
-        Products
-      </button>
-      <button class="btn btn-outline-info btn-block" routerLink="/admin/main/orders" routerLinkActive="active">
-        Orders
-      </button>
+      <button class="btn btn-outline-danger btn-block" routerLink="events">Events</button>
+      <button class="btn btn-outline-danger btn-block" routerLink="bookings">Bookings</button>
       <button class="btn btn-outline-danger btn-block" (click)="logout()">Logout</button>
     </div>
 
     <div class="col-9">
-      <router-outlet></router-outlet>
+      <!-- Dynamic area with 9 columns. router tree serves the component according to the current path. -->
+      <router-outlet />
     </div>
   </div>
 </div>

@@ -1,0 +1,41 @@
+<div class="card mb-4 shadow-sm" *ngFor="let event of Events; let ind = index">
+  <div class="row g-0">
+    <!-- Image Column -->
+    <div class="col-md-4">
+      <img
+        [src]="event.image"
+        class="img-fluid rounded-start h-100 object-fit-cover"
+        alt="{{ event.name }}"
+        style="min-height: 200px"
+      />
+    </div>
+
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5
+          class="card-title d-flex justify-content-between align-items-center"
+        >
+          {{ event.name }}
+          <span class="badge bg-primary">
+            {{ event.price | currency : "USD" : "symbol" : "2.2-2" }}
+          </span>
+        </h5>
+        <p class="card-text">{{ event.description }}</p>
+
+        <button class="btn btn-sm btn-danger" (click)="deleteEvent(event?.id)">
+          Delete
+        </button>
+        <button
+          class="btn btn-sm btn-outline-danger mr-3 ml-3"
+          [routerLink]="['/admin/main/events/edit', event.id]"
+        >
+          Edit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-danger mt-2" routerLink="/admin/main/events/create">
+  Create new Event
+</button>

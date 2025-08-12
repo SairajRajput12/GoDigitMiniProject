@@ -1,24 +1,23 @@
-import { Injectable } from "@angular/core";
-import { Cart } from "./cart.model";
+import { Injectable } from '@angular/core';
+import { Book } from './book.model';
 
 @Injectable()
 export class Order {
   public id?: number;
   public name?: string;
-  public address?: string;
-  public city?: string;
-  public state?: string;
-  public zip?: string;
-  public country?: string;
-  public shipped?: boolean = false;
+  public number?: string;
+  public status: boolean = false;
+  public cart: Book;
 
-  constructor(public cart: Cart) {}
+  constructor(cart: Book) {
+    this.cart = cart;
+  }
 
   clear() {
     this.id = undefined;
-    this.name = this.address = this.city = undefined;
-    this.state = this.zip = this.country = undefined;
-    this.shipped = false;
-    this.cart.clear();
+    this.name = undefined;
+    this.number = undefined;
+    this.status = false;
+    this.cart.clear(); // Assumes Book class has a clear() method
   }
 }

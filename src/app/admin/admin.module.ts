@@ -1,42 +1,53 @@
+import { BookingsComponent } from './booking.component';
 import { AuthComponent } from './authComponent';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
-import { ProductTableComponent } from './productTable.component';
-import { ProductEditorComponent } from './productEditor.component';
-import { OrderTableComponent } from './orderTable.component';
+import { EventTableComponent } from './eventTable.component';
+import { EventEditorComponent } from './eventEditor.component';
 
 let routing = RouterModule.forChild([
   {
     path: 'auth',
     component: AuthComponent,
   },
-
   {
     path: 'main',
     component: AdminComponent,
     children: [
-      { path: 'products/:x/:y', component: ProductEditorComponent }, // {x:'create',y:1}
-      { path: 'products/:x', component: ProductEditorComponent }, //
-      { path: 'products', component: ProductTableComponent },
-      { path: 'orders', component: OrderTableComponent },
-      { path: '**', redirectTo: 'products' },
+      {
+        path: 'events/:x/:y',
+        component: EventEditorComponent,
+      },
+      {
+        path: 'events/:x',
+        component: EventEditorComponent,
+      },
+      {
+        path: 'events',
+        component: EventTableComponent,
+      },
+      {
+        path: 'bookings',
+        component: BookingsComponent,
+      },
+      { path: '**', redirectTo: 'events' },
     ],
   },
   { path: '**', redirectTo: 'auth' },
 ]);
 
 @NgModule({
-  imports: [CommonModule, FormsModule, routing], // Dependency Modules
+  imports: [CommonModule, FormsModule, routing],
   providers: [],
   declarations: [
     AuthComponent,
     AdminComponent,
-    ProductTableComponent,
-    ProductEditorComponent,
-    OrderTableComponent,
+    EventTableComponent,
+    EventEditorComponent,
+    BookingsComponent,
   ],
 })
-export class AdminModule {} // lazy loaded.
+export class AdminModule {}

@@ -1,330 +1,75 @@
 {
-  "products": [
+  "events": [
     {
       "id": 1,
-      "name": "Kayak",
-      "category": "Watersports",
-      "description": "A boat for one person",
-      "price": 275
+      "name": "Grand Wedding Gala",
+      "description": "Celebrate love in style at the Grand Wedding Gala, featuring elegant décor, gourmet catering, and a luxurious venue perfect for your special day.",
+      "time": "2025-09-15T18:00:00",
+      "location": "The Royal Palace, Bhubaneswar",
+      "image": "https://www.shutterstock.com/image-vector/colleagues-preparing-corporate-party-time-260nw-1505856893.jpg",
+      "category": "Wedding",
+      "price": 1500
     },
     {
       "id": 2,
-      "name": "Lifejacket",
-      "category": "Watersports",
-      "description": "Protective and fashionable",
-      "price": 48.95
+      "name": "Corporate Meetup",
+      "description": "Professional setup for business events and networking opportunities in a modern venue.",
+      "time": "2025-10-05T10:00:00",
+      "location": "Tech Park Convention Center, Bengaluru",
+      "image": "https://thumbs.dreamstime.com/b/people-meeting-together-outdoor-friends-gathering-vector-illustration-concept-friend-meetup-celebration-collab-collaboration-197968976.jpg",
+      "category": "Corporate",
+      "price": 2500
     },
     {
       "id": 3,
-      "name": "Soccer Ball",
-      "category": "Soccer",
-      "description": "FIFA-approved size and weight",
-      "price": 19.5
+      "name": "Birthday Bash",
+      "description": "Fun-filled birthday party arrangements with themed decorations and entertainment.",
+      "time": "2025-08-20T16:00:00",
+      "location": "Happy Times Banquet Hall, Mumbai",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIVc_76snBOrUOxcuio_RMJWgsPvXaaQGtXQ&s",
+      "category": "Birthday",
+      "price": 500
     },
     {
       "id": 4,
-      "name": "Corner Flags",
-      "category": "Soccer",
-      "description": "Give your playing field a professional touch",
-      "price": 34.95
+      "name": "Music Concert",
+      "description": "Experience electrifying performances at the open air arena with top artists.",
+      "time": "2025-11-12T19:30:00",
+      "location": "Open Air Arena, Delhi",
+      "image": "https://media.istockphoto.com/id/1391884768/vector/alternative-band-musicians-concert-with-crowd-silhouette.jpg?s=612x612&w=0&k=20&c=vzy4deVEqBKVAGXuo5H_Bl2h9khJTq_dO2vNl_uFGCQ=",
+      "category": "Concert",
+      "price": 4500
+    },
+    {
+      "id": 5,
+      "name": "Art Exhibition",
+      "description": "Explore contemporary artworks from renowned artists in a curated gallery space.",
+      "time": "2025-07-25T11:00:00",
+      "location": "Modern Art Gallery, Pune",
+      "image": "https://img.freepik.com/free-vector/men-women-visiting-museum-art-gallery-illustration_1262-18948.jpg",
+      "category": "Exhibition",
+      "price": 900
     }
   ],
   "orders": [
     {
+      "name": "Prakash Namdeo rajput",
+      "number": "09588682874",
+      "status": false,
       "cart": {
-        "lines": [
-          {
-            "product": {
-              "id": 1,
-              "name": "Kayak",
-              "category": "Watersports",
-              "description": "A boat for one person",
-              "price": 275
-            },
-            "quantity": 2
-          }
-        ],
-        "itemCount": 2,
-        "cartPrice": 550
+        "selectedProduct": {
+          "id": 1,
+          "name": "Grand Wedding Gala",
+          "description": "Celebrate love in style at the Grand Wedding Gala, featuring elegant décor, gourmet catering, and a luxurious venue perfect for your special day.",
+          "time": "2025-09-15T18:00:00",
+          "location": "The Royal Palace, Bhubaneswar",
+          "image": "https://www.shutterstock.com/image-vector/colleagues-preparing-corporate-party-time-260nw-1505856893.jpg",
+          "category": "Wedding",
+          "price": 1500
+        },
+        "price": 1500
       },
-      "shipped": true,
-      "name": "Charlie",
-      "address": "20 W 34th St",
-      "city": "New York",
-      "state": "NY",
-      "zip": "10001",
-      "country": "United States",
       "id": 1
-    },
-    {
-      "cart": {
-        "lines": [
-          {
-            "product": {
-              "id": 3,
-              "name": "Soccer Ball",
-              "category": "Soccer",
-              "description": "FIFA-approved size and weight",
-              "price": 19.5
-            },
-            "quantity": 1
-          }
-        ],
-        "itemCount": 1,
-        "cartPrice": 19.5
-      },
-      "shipped": false,
-      "name": "dddddd",
-      "city": "khh",
-      "address": "hkhkkh",
-      "state": "kh",
-      "zip": "768",
-      "country": "kkh",
-      "id": 2
-    },
-    {
-      "cart": {
-        "lines": [
-          {
-            "product": {
-              "id": 1,
-              "name": "Kayak",
-              "category": "Watersports",
-              "description": "A boat for one person",
-              "price": 275
-            },
-            "quantity": 1
-          }
-        ],
-        "itemCount": 1,
-        "cartPrice": 275
-      },
-      "shipped": false,
-      "name": "ddddddd7",
-      "address": "hk",
-      "city": "hk",
-      "state": "hkh",
-      "zip": "686",
-      "country": "hkhk",
-      "id": 3
-    },
-    {
-      "cart": {
-        "lines": [
-          {
-            "product": {
-              "id": 2,
-              "name": "Lifejacket",
-              "category": "Watersports",
-              "description": "Protective and fashionable",
-              "price": 48.95
-            },
-            "quantity": 1
-          }
-        ],
-        "itemCount": 1,
-        "cartPrice": 48.95
-      },
-      "shipped": false,
-      "name": "zzz",
-      "address": "hkk",
-      "city": "hk",
-      "state": "hkh",
-      "zip": "6868",
-      "country": "khkkhkh",
-      "id": 4
-    },
-    {
-      "cart": {
-        "lines": [
-          {
-            "product": {
-              "id": 2,
-              "name": "Lifejacket",
-              "category": "Watersports",
-              "description": "Protective and fashionable",
-              "price": 48.95
-            },
-            "quantity": 1
-          }
-        ],
-        "itemCount": 1,
-        "cartPrice": 48.95
-      },
-      "shipped": false,
-      "name": "fdfd`kh`",
-      "address": "hhkk",
-      "city": "hkkh",
-      "state": "hkhk",
-      "zip": "77",
-      "country": "hhkkh",
-      "id": 5
-    },
-    {
-      "cart": {
-        "lines": [
-          {
-            "product": {
-              "id": 2,
-              "name": "Lifejacket",
-              "category": "Watersports",
-              "description": "Protective and fashionable",
-              "price": 48.95
-            },
-            "quantity": 1
-          }
-        ],
-        "itemCount": 1,
-        "cartPrice": 48.95
-      },
-      "shipped": false,
-      "name": "nn",
-      "address": "hkk",
-      "city": "kh",
-      "state": "kkhk",
-      "zip": "7979",
-      "country": "hhkhk",
-      "id": 6
-    },
-    {
-      "cart": {
-        "lines": [
-          {
-            "product": {
-              "id": 1,
-              "name": "Kayak",
-              "category": "Watersports",
-              "description": "A boat for one person",
-              "price": 275
-            },
-            "quantity": 1
-          }
-        ],
-        "itemCount": 1,
-        "cartPrice": 275
-      },
-      "shipped": false,
-      "name": "anon",
-      "address": "anon",
-      "city": "anon",
-      "state": "anon",
-      "zip": "78",
-      "country": "anon",
-      "id": 7
-    },
-    {
-      "cart": {
-        "lines": [
-          {
-            "product": {
-              "id": 2,
-              "name": "Lifejacket",
-              "category": "Watersports",
-              "description": "Protective and fashionable",
-              "price": 48.95
-            },
-            "quantity": 1
-          }
-        ],
-        "itemCount": 1,
-        "cartPrice": 48.95
-      },
-      "shipped": false,
-      "name": "lj",
-      "address": "hkh",
-      "city": "hhk",
-      "state": "hhk",
-      "zip": "799",
-      "country": "india",
-      "id": 8
-    },
-    {
-      "cart": {
-        "lines": [
-          {
-            "product": {
-              "id": 2,
-              "name": "Lifejacket",
-              "category": "Watersports",
-              "description": "Protective and fashionable",
-              "price": 48.95
-            },
-            "quantity": 1
-          }
-        ],
-        "itemCount": 1,
-        "cartPrice": 48.95
-      },
-      "shipped": false,
-      "name": "hhk",
-      "address": "hkh",
-      "city": "hkkhk",
-      "state": "hk",
-      "zip": "797",
-      "country": "hnkkhh",
-      "id": 9
-    },
-    {
-      "cart": {
-        "lines": [
-          {
-            "product": {
-              "id": 2,
-              "name": "Lifejacket",
-              "category": "Watersports",
-              "description": "Protective and fashionable",
-              "price": 48.95
-            },
-            "quantity": 1
-          }
-        ],
-        "itemCount": 1,
-        "cartPrice": 48.95
-      },
-      "shipped": false,
-      "name": "j",
-      "address": "hkkh",
-      "city": "hk",
-      "state": "hkh",
-      "zip": "79",
-      "country": "hhkh",
-      "id": 10
-    },
-    {
-      "cart": {
-        "lines": [
-          {
-            "product": {
-              "id": 2,
-              "name": "Lifejacket",
-              "category": "Watersports",
-              "description": "Protective and fashionable",
-              "price": 48.95
-            },
-            "quantity": 1
-          },
-          {
-            "product": {
-              "id": 4,
-              "name": "Corner Flags",
-              "category": "Soccer",
-              "description": "Give your playing field a professional touch",
-              "price": 34.95
-            },
-            "quantity": 1
-          }
-        ],
-        "itemCount": 2,
-        "cartPrice": 83.9
-      },
-      "shipped": false,
-      "name": "nm",
-      "address": "ad",
-      "city": "ci",
-      "state": "st",
-      "zip": "56",
-      "country": "in",
-      "id": 11
     }
   ]
 }

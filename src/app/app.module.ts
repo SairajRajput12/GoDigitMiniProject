@@ -1,10 +1,11 @@
-import { CheckoutComponent } from './store/checkOut.component';
+import { HomeComponent } from './store/home.component';
+import { CheckoutComponent } from './store/booking.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { StoreModule } from './store/store.module';
-import { StoreComponent } from './store/store.component';
-import { CartDetailComponent } from './store/cartDetail.component';
+import { EventModule } from './store/events.module';
+import { EventComponent } from './store/events.component';
+import { CartDetailComponent } from './store/eventDetail.component';
 import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptorService } from './interceptor/httpinterceptor-service';
@@ -12,14 +13,18 @@ import { HttpInterceptorService } from './interceptor/httpinterceptor-service';
 @NgModule({
   imports: [
     BrowserModule,
-    StoreModule,
+    EventModule,
     RouterModule.forRoot([
       {
-        path: 'store',
-        component: StoreComponent,
+        path: 'home',
+        component: HomeComponent,
       },
       {
-        path: 'cart',
+        path: 'event',
+        component: EventComponent,
+      },
+      {
+        path: 'booking',
         component: CartDetailComponent,
       },
       {
@@ -34,7 +39,7 @@ import { HttpInterceptorService } from './interceptor/httpinterceptor-service';
         //    component: AuthComponent,
       },
 
-      { path: '**', redirectTo: '/store' },
+      { path: '**', redirectTo: '/home' },
     ]),
   ],
   providers: [

@@ -1,0 +1,47 @@
+<!-- Show message if no bookings -->
+<span *ngIf="getOrders().length === 0">There are no events booked</span>
+
+<!-- Loop through orders -->
+<div *ngFor="let order of getOrders()" class="card mb-3">
+  <div class="row g-0">
+    <!-- Image Column -->
+    <div class="col-md-4">
+      <img
+        [src]="order.cart.selectedEvent.image"
+        class="img-fluid rounded-start h-100 object-fit-cover"
+        alt="{{ order.cart.selectedEvent.name }}"
+        style="min-height: 200px"
+      />
+    </div>
+
+    <!-- Details Column -->
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5
+          class="card-title d-flex justify-content-between align-items-center"
+        >
+          {{ order.cart.selectedEvent.name }}
+          <span class="badge bg-primary"
+            >₹{{ order.cart.selectedEvent.price }}</span
+          >
+        </h5>
+        <p class="card-text">{{ order.cart.selectedEvent.description }}</p>
+        <p class="card-text">
+          <strong>Location:</strong>
+          {{ order.cart.selectedEvent.location }}
+        </p>
+        <p class="card-text">
+          <strong>Time:</strong>
+          {{ order.cart.selectedEvent.time | date : "medium" }}
+        </p>
+        <p class="card-text">
+          <strong>Booked By:</strong>
+          {{ order.name }}
+          <br />
+          <strong>Contact:</strong>
+          {{ order.number }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

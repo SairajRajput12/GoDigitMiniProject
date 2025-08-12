@@ -1,0 +1,32 @@
+<div *ngIf="!orderSent" class="container-fluid">
+  <div class="row bg-black">
+    <div class="col text-center">
+      <span class="navbar-brand fw-bold" style="color: #e7165a; font-size: 2rem">Eventra</span>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="orderSent" class="m-4 text-center bg-dark text-white p-4 rounded shadow">
+  <h2 class="text-danger">Thanks!</h2>
+  <p class="fs-5">Thanks for using Eventra Application.</p>
+  <p class="mb-4">The status of your booking will come to know as soon as possible.</p>
+  <a routerLink="/store" class="btn btn-outline-danger px-4 py-2">Return to Store</a>
+</div>
+
+<form *ngIf="!orderSent" #form="ngForm" novalidate (ngSubmit)="submitOrder(form)" class="m-2">
+  <div class="form-group">
+    <label>Name</label>
+    <input class="form-control" #name="ngModel" name="name" [(ngModel)]="order.name" required />
+    <span *ngIf="submitted && name.invalid" class="text-danger">Please enter your name</span>
+  </div>
+  <div class="form-group">
+    <label>Phone Number</label>
+    <input class="form-control" #number="ngModel" name="number" [(ngModel)]="order.number" required />
+    <span *ngIf="submitted && number.invalid" class="text-danger">Please enter your Phone Number</span>
+  </div>
+
+  <div class="text-center">
+    <button class="btn btn-secondary m-1 btn-danger" routerLink="/book">Back</button>
+    <button class="btn btn-primary m-1 btn-danger" type="submit">Complete Booking</button>
+  </div>
+</form>

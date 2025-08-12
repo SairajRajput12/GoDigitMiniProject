@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="row bg-black">
+    <div class="col text-center">
+      <span class="navbar-brand fw-bold" style="color: #e7165a; font-size: 2rem">Booking Details</span>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="card bg-dark text-white shadow-lg">
+      <div class="row g-0">
+        <!-- Event Image -->
+        <div class="col-md-4">
+          <img
+            src="{{ initialObject?.image }}"
+            class="img-fluid rounded-start h-100 object-fit-cover"
+            alt="Event Image"
+            style="min-height: 250px"
+          />
+        </div>
+
+        <!-- Event Details -->
+        <div class="col-md-8">
+          <div class="card-body">
+            <h4 class="card-title text-danger">{{ initialObject?.name }}</h4>
+            <p class="card-text">
+              {{ initialObject?.description }}
+            </p>
+            <p class="card-text">
+              <strong class="text-warning">Date:</strong>
+              {{ initialObject?.time }}
+            </p>
+            <p class="card-text">
+              <strong class="text-warning">Location:</strong>
+              {{ initialObject?.location }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="text-center">
+        <button class="btn btn-primary m-1 btn-danger" routerLink="/store" (click)="clearBooking()">
+          Cancel Booking
+        </button>
+
+        <button
+          class="btn btn-secondary m-1 btn-danger"
+          routerLink="/checkout"
+          [disabled]="initialObject == null || !connected"
+        >
+          {{ connected ? "Confirm Booking" : "Offline" }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
