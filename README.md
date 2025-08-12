@@ -20,7 +20,7 @@
 
 ## 👥 **Team Members**
 
-* **Ankur Pandey** – \[[ankurpandey@godigit.com](mailto:ankurpandey@godigit.com)] **Sairaj Rajput** – \[[sairaj.rajput@godigit.com](mailto:sairaj.rajput@godigit.com)]
+* **Ankur Pandey** – \[[ankurpandey@godigit.com](mailto:ankurpandey@godigit.com)] and **Sairaj Rajput** – \[[sairaj.rajput@godigit.com](mailto:sairaj.rajput@godigit.com)]
 
 ---
 
