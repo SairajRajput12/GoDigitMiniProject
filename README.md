@@ -1,61 +1,66 @@
-# 🎉 Eventra – Event Booking Management App
-
-**Eventra** is a web application designed to streamline event bookings. Users can browse and book events, while admins have the ability to add and manage events.
-
-The given application has the following features:
-
-1. Home page - For the navigation purpose and for the customer retention purpose.
-2. Events page - This page displays the events to the user and where user can book the event.
-3. Booking Detail page - This page used to confirm the booking of the event.
-4. Booking Form - This page is used to send the booking to the backend
-5. Auth Page - this page is used to authenticate the admin
-6. Admin's Page - this page usually used to show the bookings to the admin and show the events that are currrently available in the backend.
 
 ---
 
-## 👥 Team Members
+# 🎉 **Eventra – Smart Event Booking & Management App**
 
-- **Ankur Pandey** – [ankurpandey@godigit.com]
-- **Sairaj Rajput** – [sairaj.rajput@godigit.com]
+**Eventra** is your one-stop platform for effortless event booking and management. Whether you're a user looking to explore and book exciting events, or an admin managing bookings and event listings, Eventra makes it seamless, fast, and intuitive.
 
 ---
 
-## 🚀 Project Setup
+## ✨ **Key Features**
 
-This project was generated using Angular CLI version **18.2.20**.
+1. **🏠 Home Page** – Easy navigation and enhanced customer engagement.
+2. **🎭 Events Page** – Browse available events and instantly book your favorites.
+3. **📄 Booking Detail Page** – Confirm your bookings with ease.
+4. **📝 Booking Form** – Send your booking details directly to the backend.
+5. **🔐 Authentication Page** – Secure login for admins.
+6. **🛠 Admin Dashboard** – View all bookings and manage event listings effortlessly.
 
-# How to run the code ?
+---
 
-## A. For Development Purpose:
+## 👥 **Team Members**
 
-1. Install the dependencies of the application
+* **Ankur Pandey** – \[[ankurpandey@godigit.com](mailto:ankurpandey@godigit.com)] **Sairaj Rajput** – \[[sairaj.rajput@godigit.com](mailto:sairaj.rajput@godigit.com)]
+
+---
+
+## 🚀 **Project Setup & Usage**
+
+> This project was built using **Angular CLI v18.2.20**.
+
+### **A. Development Mode**
+
+1. **Install Dependencies**
 
 ```bash
 npm install
 ```
 
-2. To start the Frontend server of the application:
+2. **Run Frontend Server**
 
 ```bash
 ng serve
 ```
 
-3. To start the server-json of the application
+3. **Run JSON Server**
 
 ```bash
 npm run json
 ```
 
-## B. For Building the application
+### **B. Production Build**
 
-1. For creating the build:
-
-```bash
-  ng build
-```
-
-2. For running the server
+1. **Create Build**
 
 ```bash
-  node server.js
+ng build
 ```
+
+2. **Start Server**
+
+```bash
+node server.js
+```
+
+---
+
